@@ -38,7 +38,6 @@ class TXO:
     @classmethod
     def from_tx_hash(cls,tx_hash,n=0):
         tx = rpc_connection.getrawtransaction(tx_hash, True)
-        tx = json.loads(tx)
         outputs = tx["vout"]
 
         n_output = None
@@ -53,7 +52,6 @@ class TXO:
 
     def get_inputs(self,d=1):
         tx = rpc_connection.getrawtransaction(self.tx_hash, True)
-        tx = json.loads(tx)
         inputs =[]
         for t in tx["vin"]:
             vin_tx = TXO.from_tx_hash(t["txid"], t["vout"])
