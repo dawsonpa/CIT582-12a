@@ -56,7 +56,7 @@ class TXO:
         inputs =[]
         for t in tx["vin"]:
             vin_tx = TXO.from_tx_hash(t["txid"], t["vout"])
-            if d > 1:
+            if d > 0:
                 vin_tx.get_inputs(d-1)
             inputs.append(vin_tx)
         self.inputs = inputs
