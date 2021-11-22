@@ -49,7 +49,7 @@ class TXO:
         addresses = n_output["scriptPubKey"]
         addresses = addresses["addresses"]
         print('made it here')
-        new_tx = TXO(tx_hash, n, int(100000000 * n_output["value"]), addresses[0] ,datetime.fromtimestamp(n_output["time"]))
+        new_tx = TXO(tx_hash, n, int(100000000 * n_output["value"]), addresses[0] ,datetime.fromtimestamp(tx["time"]))
 
         return new_tx
 
