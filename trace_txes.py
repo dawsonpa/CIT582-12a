@@ -43,7 +43,7 @@ class TXO:
         n_output = None
         for o in outputs:
             if o["n"] == n:
-                n_output = o
+                n_output = json.loads(o)
                 break
         print(n_output)
         addresses = n_output['addresses']
