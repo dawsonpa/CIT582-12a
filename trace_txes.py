@@ -43,7 +43,7 @@ class TXO:
         n_output = None
         for o in outputs:
             if o["n"] == n:
-                n_output = json.loads(o)
+                n_output = o
                 break
         print(n_output)
         addresses = n_output["scriptPubKey"]
