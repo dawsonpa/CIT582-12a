@@ -45,6 +45,7 @@ class TXO:
             if o["n"] == n:
                 n_output = o
                 break
+        print(n_output)
         addresses = n_output["addresses"]
         new_tx = TXO(tx_hash, n, int(100000000 * n_output["value"]), addresses[0] ,datetime.fromtimestamp(n_output["time"]))
 
